@@ -46,12 +46,28 @@ namespace Associado.Repositories.Repository
 
         public async Task<List<AssociadoDTO>> GetAllDto()
         {
-            return await dataContext.AssociadoDTO.ToListAsync();
+            return await dataContext.Associado.Include(i => i.dependente).Select(a =>
+                new AssociadoDTO()
+                {
+                    id = a.id,
+                    nome = a.nome,
+                    email = a.email,
+                    ceep = a.ceep
+                }
+            ).ToListAsync();
         }
 
-        public async Task<AssociadoDTO> GetByNameDto(string nome)
+        public async Task<AssociadoDTO> GetByIdDto(int id)
         {
-            return await dataContext.AssociadoDTO.SingleOrDefaultAsync(x=>x.nome == nome);
+            return await dataContext.Associado.Include(i => i.dependente).Select(a =>
+                new AssociadoDTO()
+                {
+                    id = a.id,
+                    nome = a.nome,
+                    ceep = a.ceep,
+                    email = a.email,
+                }
+            ).SingleOrDefaultAsync(i => i.id == id);
         }
     }
 }

@@ -21,26 +21,18 @@ namespace Associado.API.Controllers
         // GET api/values
         [Authorize]
         [HttpGet]
-        public async Task<IEnumerable<Associad>> Get()
+        public async Task<IEnumerable<AssociadoDTO>> Get()
         {
-            return await this.repository.GetAll();
+            return await this.repository.GetAllDto();
         }
 
         // GET api/values/5
         [Authorize]
         [HttpGet("{id}")]
-        public async Task<Associad> Get(int id)
+        public async Task<AssociadoDTO> GetBy(int id)
         {
-            return await this.repository.GetById(id);
+            return await this.repository.GetByIdDto(id);
         }
-
-        [Authorize]
-        [HttpGet("{nome}")]
-        public async Task<AssociadoDTO> GetByDto(string nome)
-        {
-            return await this.repository.GetByNameDto(nome);
-        }
-
         // POST api/values  
         [Authorize]
         [HttpPost]

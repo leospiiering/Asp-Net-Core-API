@@ -4,7 +4,7 @@ namespace Associado.Domain
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public string descProblema { get; set; }
+        public string email { get; set; }
         public string ceep { get; set; }
     }
 }

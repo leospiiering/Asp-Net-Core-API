@@ -12,6 +12,6 @@ namespace Associado.Repositories.Interfaces
         Task<Associad> GetById(int id);
         Task<List<Associad>> GetAll();
         Task<List<AssociadoDTO>> GetAllDto();
-        Task<AssociadoDTO> GetByNameDto(string nome);
+        Task<AssociadoDTO> GetByIdDto(int id);
     }
 }
