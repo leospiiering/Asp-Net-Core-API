@@ -34,7 +34,7 @@ namespace Associado.Repositories.Migrations
                     id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     nome = table.Column<string>(nullable: true),
-                    descProblema = table.Column<string>(nullable: true),
+                    email = table.Column<string>(nullable: true),
                     ceep = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

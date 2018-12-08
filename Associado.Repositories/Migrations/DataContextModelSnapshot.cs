@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-
 namespace Associado.Repositories.Migrations
 {
     [DbContext(typeof(DataContext))]
@@ -51,7 +50,7 @@ namespace Associado.Repositories.Migrations
 
                     b.Property<string>("ceep");
 
-                    b.Property<string>("descProblema");
+                    b.Property<string>("email");
 
                     b.Property<string>("nome");
 

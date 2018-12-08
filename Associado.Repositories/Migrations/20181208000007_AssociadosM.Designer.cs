@@ -6,11 +6,10 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-
 namespace Associado.Repositories.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181207195939_AssociadosM")]
+    [Migration("20181208000007_AssociadosM")]
     partial class AssociadosM
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +52,7 @@ namespace Associado.Repositories.Migrations
 
                     b.Property<string>("ceep");
 
-                    b.Property<string>("descProblema");
+                    b.Property<string>("email");
 
                     b.Property<string>("nome");
 
